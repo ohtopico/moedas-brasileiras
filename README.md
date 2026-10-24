@@ -17,7 +17,7 @@ Meu primeiro dataset próprio: fotos de moedas brasileiras de circulação comum
 
 ## Resultados
 
-> **Atenção:** os números abaixo são da execução anterior, em que a lista de fotos era embaralhada de novo a cada leitura e parte das fotos de validação também aparecia no treino. A divisão foi corrigida (embaralhamento único, com semente fixa) e o notebook precisa ser executado de novo para atualizar estes resultados.
+> **Atenção:** os números abaixo são da execução original. Naquela versão, a lista de fotos era embaralhada de novo a cada leitura, e parte das fotos de validação também entrava no treino. O código foi corrigido (embaralhamento único, com semente fixa), mas as fotos não estão mais disponíveis para executar de novo, então os resultados e gráficos do notebook continuam sendo os da versão anterior.
 
 - Acurácia de treino em torno de **92%** nas últimas épocas e acurácia de validação em torno de **53%**: o modelo decora o treino e generaliza pouco, o esperado com tão poucas fotos.
 - Na matriz de confusão, **20 das 38 fotos** de validação foram classificadas corretamente. A moeda de 1 real foi a mais fácil (5 de 5), e as de 1, 5 e 10 centavos, com cores e tamanhos parecidos, foram as mais confundidas entre si.
