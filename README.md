@@ -22,6 +22,13 @@ Meu primeiro dataset próprio: fotos de moedas brasileiras de circulação comum
 
 A apresentação do projeto está em [`Apresentação.pdf`](Apresentação.pdf).
 
+## Limitações
+
+- **A validação mistura fotos do treino.** `tf.data.Dataset.list_files` embaralha a lista de fotos de novo a cada leitura. Como o treino (`take`) e a validação (`skip`) leem a lista separadamente, parte das fotos de validação também entra no treino. Num teste com 186 fotos de exemplo, de 15 a 18 das 38 fotos de validação estavam nos dois conjuntos. Por isso, a acurácia de validação acima tende a ser otimista.
+- **Como corrigir:** listar os arquivos com `tf.io.gfile.glob`, ordenar e embaralhar uma única vez, com semente fixa (`.shuffle(n, seed=42, reshuffle_each_iteration=False)`), antes de separar treino e validação. Durante o treino, `validation_steps = 38 // 32 = 1` também faz a validação usar só as primeiras 32 fotos.
+- As fotos não estão mais disponíveis, então o notebook não pode ser executado de novo com a correção.
+- A base é pequena (cerca de 31 fotos por classe), o que limita a generalização.
+
 ## Como executar
 
 O notebook foi feito para o **Google Colab** com acesso ao bucket.
