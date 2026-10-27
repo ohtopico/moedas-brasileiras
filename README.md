@@ -37,10 +37,18 @@ O notebook foi feito para o **Google Colab** com acesso ao bucket.
 2. Execute as células em ordem. A primeira instala as dependências que não vêm no Colab (lista completa em `requirements.txt`).
 3. Os parâmetros do experimento (tamanho da imagem, lote, épocas, taxa de aprendizado, classes) ficam reunidos na seção **2. Parâmetros**.
 
+## Fase 2: estado de conservação
+
+A segunda fase do projeto, em [`conservacao/`](conservacao/), ataca o item de
+trabalhos futuros: coleta fotos de moedas com o grau de conservação (FC, SOB,
+MBC, BC…) a partir de leilões numismáticos e treina uma MobileNetV3-Large para
+classificar o grau. O valor de colecionador vem depois, por consulta de catálogo
+a partir de tipo, ano e grau. Detalhes no [README da pasta](conservacao/README.md).
+
 ## Trabalhos futuros
 
 - Aumentar a base de fotos e usar parada antecipada (*early stopping*) no lugar de um número fixo de épocas.
-- Prever o valor da moeda a partir do ano e do estado de conservação.
+- ~~Prever o valor da moeda a partir do ano e do estado de conservação.~~ Em andamento na [fase 2](conservacao/).
 
 ## Autora
 
